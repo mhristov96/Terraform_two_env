@@ -16,5 +16,11 @@ module "network" {
   subnets             = local.conf.subnets
   network_interfaces_name = local.conf.network_interfaces_name
   public_ips          = local.conf.public_ips
-
+}
+module "compute" {
+  source = "./modules/compute"
+  vm_name = local.conf.vm_name
+  vm_size = local.conf.vm_size
+  source_image_reference = local.conf.source_image_reference
+  admin_username = local.conf.admin_username
 }
