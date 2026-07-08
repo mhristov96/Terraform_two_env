@@ -13,18 +13,22 @@
             }
         },
         "network_interfaces_name": {
-            "subnet1": {
-                "network_interfaces_name": "prod-nic1"
+            "nic1": {
+                "network_interface_name": "prod-nic1",
+                "subnet_name": "prod-subnet1",
+                "public_ip_name": "prod-public-ip1"
             },
-            "subnet2": {
-                "network_interfaces_name": "prod-nic2"
+            "nic2": {
+                "network_interface_name": "prod-nic2",
+                "subnet_name": "prod-subnet2",
+                "public_ip_name": "prod-public-ip2"
             }
         },
         "public_ips": {
-            "subnet1": {
-                "public_ip_name": "prod-public-ip1"
+            "public_ip1": {
+                "public_ip_name": "prod-public-ip"
             },
-            "subnet2": {
+            "public_ip2": {
                 "public_ip_name": "prod-public-ip2"
             }
         },

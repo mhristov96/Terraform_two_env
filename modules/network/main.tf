@@ -19,9 +19,9 @@ resource "azurerm_network_interface" "nics" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.web_subnets[each.key].id
+    subnet_id                     = azurerm_subnet.web_subnets[each.value.subnet_name].id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.public_ip[each.key].id
+    public_ip_address_id          = azurerm_public_ip.public_ip[each.value.public_ip_name].id
   }
 }
 resource "azurerm_public_ip" "public_ip" {
