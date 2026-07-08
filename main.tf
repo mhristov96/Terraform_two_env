@@ -14,6 +14,7 @@ module "network" {
   resource_group_name = azurerm_resource_group.appgrp.name
   location            = azurerm_resource_group.appgrp.location
   subnets             = local.conf.subnets
-  network_interface_name = local.conf.network_interface_name
+  network_interfaces_name = local.conf.network_interfaces_name
   public_ips          = local.conf.public_ips
+
 }
