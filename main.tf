@@ -4,7 +4,7 @@ locals {
 
 resource "azurerm_resource_group" "appgrp" {
   name     = local.conf.resource_group_name
-  location = "westeurope"
+  location = local.conf.resource_group_location
 }
 
 module "network" {

@@ -1,7 +1,7 @@
 resource "azurerm_linux_virtual_machine" "webvm01" {
   name                = var.vm_name
   resource_group_name = var.resource_group_name
-  location            = var.resource_group_name.location
+  location            = var.resource_group_location
   size                = var.vm_size
   admin_username      = var.admin_username
   admin_password      = "test12313"
