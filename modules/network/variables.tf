@@ -23,7 +23,9 @@ variable "subnets" {
 }
 variable "network_interface_name" {
   description = "The name of the network interface"
-  type        = string
+  type        = map(object({
+  network_interface_name = string
+  }))
 }
 variable "public_ips" {
   description = "The name of the public IP address"

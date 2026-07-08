@@ -12,8 +12,22 @@
                 "address_prefix": "10.1.2.0/24" 
             }
         },
-        "network_interface_name": "dev-nic",
-        "public_ip_name": "dev-public-ip",
+        "network_interfaces_name": {
+            "nic1": {
+                "network_interface_name": "dev-nic"
+            },
+            "nic2": {
+                "network_interface_name": "dev-nic2"
+            }
+        },
+        "public_ips": {
+            "public_ip1": {
+                "public_ip_name": "dev-public-ip"
+            },
+            "public_ip2": {
+                "public_ip_name": "dev-public-ip2"
+            }
+        },
         "vm_name": "dev-vm",
         "vm_size": "Standard_D2as_v6"
 

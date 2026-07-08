@@ -12,7 +12,14 @@
                 "address_prefix": "10.0.2.0/24" 
             }
         },
-        "network_interface_name": "prod-nic",
+        "network_interfaces_name": {
+            "nic1": {
+                "network_interface_name": "prod-nic"
+            },
+            "nic2": {
+                "network_interface_name": "prod-nic2"
+            }
+        },
         "public_ips": {
             "public_ip1": {
                 "public_ip_name": "prod-public-ip"

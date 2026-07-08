@@ -12,15 +12,16 @@ resource "azurerm_subnet" "web_subnets" {
   address_prefixes     = [var.subnets[each.key].address_prefix]
 }
 resource "azurerm_network_interface" "nics" {
-  name                = var.network_interface_name
+  for_each = var.network_interface_name
+  name                = var.network_interface_name[each.key]
   location            = var.location
   resource_group_name = var.resource_group_name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.web_subnets["websubnets"].id
+    subnet_id                     = azurerm_subnet.web_subnets[each.key].id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.public_ip.id
+    public_ip_address_id          = azurerm_public_ip.public_ip[each.key].id
   }
 }
 resource "azurerm_public_ip" "public_ip" {
