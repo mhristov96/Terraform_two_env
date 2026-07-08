@@ -15,13 +15,13 @@
         "network_interfaces_name": {
             "nic1": {
                 "network_interface_name": "dev-nic",
-                "subnet_name": "dev-subnet1",
-                "public_ip_name": "dev-public-ip1"
+                "subnet_name": "subnet1",
+                "public_ip_name": "public-ip1"
             },
             "nic2": {
                 "network_interface_name": "dev-nic2",
-                "subnet_name": "dev-subnet2",
-                "public_ip_name": "dev-public-ip2"
+                "subnet_name": "subnet2",
+                "public_ip_name": "public-ip2"
             }
         },
         "public_ips": {
