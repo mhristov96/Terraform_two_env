@@ -35,3 +35,8 @@ variable "public_ips" {
   public_ip_name = string
   }))
 }
+
+variable "nsg_name" {
+  description = "The name of the network security group"
+  type        = string
+}

@@ -1,4 +1,5 @@
 {
+"nsg_name": "dev-nsg",
 "resource_group_name": "dev-rg",
 "resource_group_location": "westeurope",
 "vnet_name": "dev-vnet",
@@ -46,6 +47,4 @@
         
 
 }
-
-
-    }
+}
