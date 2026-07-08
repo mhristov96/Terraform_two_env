@@ -1,10 +1,12 @@
-resource "azurerm_resource_group" "appgrp" {
-  name     = "test123"
-  location = "westeurope"
-}
 locals {
     conf = jsondecode(file("${path.module}/${var.env}.json"))
 }
+
+resource "azurerm_resource_group" "appgrp" {
+  name     = local.conf.resource_group_name
+  location = "westeurope"
+}
+
 module "network" {
   source              = "./modules/network"
   vnet_name           = local.conf.vnet_name
