@@ -25,4 +25,5 @@ module "compute" {
   admin_username = local.conf.admin_username
   resource_group_name = local.conf.resource_group_name
   network_interface_id = module.network.nic_info1
+  resource_group_location = local.conf.resource_group_location
   }
