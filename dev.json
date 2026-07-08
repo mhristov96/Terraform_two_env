@@ -1,50 +1,43 @@
 {
-"nsg_name": "dev-nsg",
-"resource_group_name": "dev-rg",
-"resource_group_location": "westeurope",
-"vnet_name": "dev-vnet",
-"vnet_address_space": "10.1.0.0/16",
-        "subnets": {
-            "subnet1": {
-                "subnet_name": "dev-subnet1",
-                "address_prefix": "10.1.1.0/24"
-            },
-            "subnet2": {
-                "subnet_name": "dev-subnet2",
-                "address_prefix": "10.1.2.0/24" 
-            }
-        },
-        "network_interfaces_name": {
-            "nic1": {
-                "network_interface_name": "dev-nic",
-                "subnet_name": "subnet1",
-                "public_ip_name": "public_ip1"
-            },
-            "nic2": {
-                "network_interface_name": "dev-nic2",
-                "subnet_name": "subnet2",
-                "public_ip_name": "public_ip2"
-            }
-        },
-        "public_ips": {
-            "public_ip1": {
-                "public_ip_name": "dev-public-ip1"
-            },
-            "public_ip2": {
-                "public_ip_name": "dev-public-ip2"
-            }
-        },
-        "vm_name": "dev-vm",
-        "vm_size": "Standard_D2as_v6",
-        "admin_username": "miro0o",
-        "admin_password": "Miro$@$#FAdada1234!",
-        "source_image_reference": {
-          "publisher": "Canonical",
-          "offer": "0001-com-ubuntu-server-jammy",
-          "sku": "22_04-lts-gen2",
-          "version": "latest"
-         
-        
-
-}
+  "resource_group_name": "dev-rg",
+  "resource_group_location": "westeurope",
+  "vnet_name": "dev-vnet",
+  "vnet_address_space": "10.1.0.0/16",
+  "nsg_name": "dev-nsg",
+  "subnets": [
+    {
+      "name": "dev-subnet1",
+      "address_prefix": "10.1.1.0/24",
+      "associate_nsg": true
+    },
+    {
+      "name": "dev-subnet2",
+      "address_prefix": "10.1.2.0/24",
+      "associate_nsg": false
+    }
+  ],
+  "network_interfaces": [
+    {
+      "name": "dev-nic1",
+      "subnet_name": "dev-subnet1",
+      "public_ip_name": "dev-public-ip1"
+    },
+    {
+      "name": "dev-nic2",
+      "subnet_name": "dev-subnet2",
+      "public_ip_name": "dev-public-ip2"
+    }
+  ],
+  "virtual_machine": {
+    "name": "dev-vm",
+    "size": "Standard_D2as_v6",
+    "admin_username": "miro0o",
+    "ssh_public_key": "ssh-rsa AAAAB3NzaC1yc...",
+    "source_image_reference": {
+      "publisher": "Canonical",
+      "offer": "0001-com-ubuntu-server-jammy",
+      "sku": "22_04-lts-gen2",
+      "version": "latest"
+    }
+  }
 }
