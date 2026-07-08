@@ -1,40 +1,43 @@
 {
-"resource_group_name": "prod-rg",
-"vnet_name": "prod-vnet",
-"vnet_address_space": "10.0.0.0/16",
-        "subnets": {
-            "subnet1": {
-                "subnet_name": "prod-subnet1",
-                "address_prefix": "10.0.1.0/24"
-            },
-            "subnet2": {
-                "subnet_name": "prod-subnet2",
-                "address_prefix": "10.0.2.0/24" 
-            }
-        },
-        "network_interfaces_name": {
-            "nic1": {
-                "network_interface_name": "prod-nic1",
-                "subnet_name": "prod-subnet1",
-                "public_ip_name": "prod-public-ip1"
-            },
-            "nic2": {
-                "network_interface_name": "prod-nic2",
-                "subnet_name": "prod-subnet2",
-                "public_ip_name": "prod-public-ip2"
-            }
-        },
-        "public_ips": {
-            "public_ip1": {
-                "public_ip_name": "prod-public-ip"
-            },
-            "public_ip2": {
-                "public_ip_name": "prod-public-ip2"
-            }
-        },
-        "vm_name": "prod-vm",
-        "vm_size": "Standard_D2as_v6"
-
+  "resource_group_name": "prod-rg",
+  "resource_group_location": "westeurope",
+  "vnet_name": "prod-vnet",
+  "vnet_address_space": "10.0.0.0/16",
+  "nsg_name": "prod-nsg",
+  "subnets": [
+    {
+      "name": "prod-subnet1",
+      "address_prefix": "10.0.1.0/24",
+      "associate_nsg": true
+    },
+    {
+      "name": "prod-subnet2",
+      "address_prefix": "10.0.2.0/24",
+      "associate_nsg": false
     }
-    
-
+  ],
+  "network_interfaces": [
+    {
+      "name": "prod-nic1",
+      "subnet_name": "prod-subnet1",
+      "public_ip_name": "prod-public-ip1"
+    },
+    {
+      "name": "prod-nic2",
+      "subnet_name": "prod-subnet2",
+      "public_ip_name": "prod-public-ip2"
+    }
+  ],
+  "virtual_machine": {
+    "name": "prod-vm",
+    "size": "Standard_D2as_v6",
+    "admin_username": "miro0o",
+    "admin_password": "Miro$@$#FAdada1234!",
+    "source_image_reference": {
+      "publisher": "Canonical",
+      "offer": "0001-com-ubuntu-server-jammy",
+      "sku": "22_04-lts-gen2",
+      "version": "latest"
+    }
+  }
+}
