@@ -43,6 +43,8 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve \
+        run: |
+          terraform apply \
+          -auto-approve \
           -var="env=${{ github.event.inputs.environment }}"
           -var="backend=${{ github.event.inputs.environment }}"
