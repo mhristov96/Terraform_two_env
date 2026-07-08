@@ -19,4 +19,12 @@ variable "source_image_reference" {
     version   = string
   })
 }
+variable "resource_group_name" {
+  description = "The name of the resource group"
+  type        = string
+}
 
+variable "network_interface_id" {
+  description = "The ID of the network interface"
+  type        = string
+}

@@ -1,15 +1,13 @@
 resource "azurerm_linux_virtual_machine" "webvm01" {
   name                = var.vm_name
-  resource_group_name = azurerm_resource_group.appgrp.name
-  location            = azurerm_resource_group.appgrp.location
+  resource_group_name = var.resource_group_name
+  location            = var.resource_group_name.location
   size                = var.vm_size
   admin_username      = var.admin_username
-  admin_password      = azurerm_key_vault_secret.appsecret.value
+  admin_password      = test12313
   disable_password_authentication = false
   custom_data        = base64encode(file("${path.module}/cloudinit"))
-  network_interface_ids = [
-    azurerm_network_interface.nics["nic1"].id
-  ]
+  network_interface_ids = [var.network_interface_id]
 
   os_disk {
     caching              = "ReadWrite"
