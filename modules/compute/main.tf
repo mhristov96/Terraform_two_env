@@ -4,7 +4,7 @@ resource "azurerm_linux_virtual_machine" "webvm01" {
   location            = var.resource_group_location
   size                = var.vm_size
   admin_username      = var.admin_username
-  admin_password      = "T#Fdaest12313"
+  admin_password      = var.admin_password
   disable_password_authentication = false
   custom_data        = base64encode(file("${path.module}/cloudinit"))
   network_interface_ids = [var.network_interface_id]
@@ -20,6 +20,4 @@ resource "azurerm_linux_virtual_machine" "webvm01" {
     version   = var.source_image_reference.version
   }
 }
-data "local_file" "cloudinit" {
-  filename = "cloudinit"
-}
+

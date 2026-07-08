@@ -35,12 +35,14 @@
         },
         "vm_name": "dev-vm",
         "vm_size": "Standard_D2as_v6",
+        "admin_username": "miro0o",
+        "admin_password": "Miro$@$#FAdada1234!",
         "source_image_reference": {
           "publisher": "Canonical",
           "offer": "0001-com-ubuntu-server-jammy",
           "sku": "22_04-lts-gen2",
-          "version": "latest",
-         "admin_username": "miro0o"
+          "version": "latest"
+         
         
 
 }

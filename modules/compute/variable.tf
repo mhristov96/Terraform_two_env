@@ -32,3 +32,8 @@ variable "resource_group_location" {
   description = "The location of the virtual machine"
   type        = string
 }
+
+variable "admin_password" {
+  description = "The admin password for the virtual machine"
+  type        = string
+}
