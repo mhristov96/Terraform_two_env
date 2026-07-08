@@ -50,3 +50,9 @@ resource "azurerm_network_security_group" "nsg" {
         destination_address_prefix = "*"
     }
 }
+
+resource "azurerm_network_interface_security_group_association" "nsg_assoc" {
+  for_each = var.network_interfaces_name
+  network_interface_id      = azurerm_network_interface.nics[each.key].id
+  network_security_group_id = azurerm_network_security_group.nsg.id
+}

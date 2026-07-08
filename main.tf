@@ -16,6 +16,7 @@ module "network" {
   subnets             = local.conf.subnets
   network_interfaces_name = local.conf.network_interfaces_name
   public_ips          = local.conf.public_ips
+  nsg_name          = local.conf.nsg_name
 }
 module "compute" {
   source = "./modules/compute"
