@@ -14,3 +14,10 @@ variable "location" {
   description = "The location of the virtual network"
   type        = string
 }
+variable "subnets" {
+  description = "A map of subnets to create"
+  type        = map(object({
+  subnet_name           = string
+  address_prefix = string
+  }))
+}
