@@ -13,7 +13,14 @@
             }
         },
         "network_interface_name": "prod-nic",
-        "public_ip_name": "prod-public-ip",
+        "public_ips": {
+            "public_ip1": {
+                "public_ip_name": "prod-public-ip"
+            },
+            "public_ip2": {
+                "public_ip_name": "prod-public-ip2"
+            }
+        },
         "vm_name": "prod-vm",
         "vm_size": "Standard_D2as_v6"
 

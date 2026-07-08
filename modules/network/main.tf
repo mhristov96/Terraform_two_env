@@ -11,3 +11,22 @@ resource "azurerm_subnet" "web_subnets" {
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = [var.subnets[each.key].address_prefix]
 }
+resource "azurerm_network_interface" "nics" {
+  name                = var.network_interface_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.web_subnets["websubnets"].id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.public_ip.id
+  }
+}
+resource "azurerm_public_ip" "public_ip" {
+  for_each = var.public_ips
+  name                = var.public_ips[each.key].public_ip_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = "Static"
+}

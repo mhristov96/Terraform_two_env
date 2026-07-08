@@ -21,3 +21,13 @@ variable "subnets" {
   address_prefix = string
   }))
 }
+variable "network_interface_name" {
+  description = "The name of the network interface"
+  type        = string
+}
+variable "public_ips" {
+  description = "The name of the public IP address"
+  type        = map(object({
+  public_ip_name = string
+  }))
+}
