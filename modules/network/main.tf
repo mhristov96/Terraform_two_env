@@ -13,7 +13,7 @@ resource "azurerm_subnet" "web_subnets" {
 }
 resource "azurerm_network_interface" "nics" {
   for_each = var.network_interfaces_name
-  name                = var.network_interfaces_name[each.key].network_interface_name
+  name                = var.network_interfaces_name[each.key].network_interfaces_name
   location            = var.location
   resource_group_name = var.resource_group_name
 
