@@ -21,7 +21,7 @@ variable "subnets" {
   address_prefix = string
   }))
 }
-variable "network_interface_name" {
+variable "network_interfaces_name" {
   description = "The name of the network interface"
   type        = map(object({
   network_interface_name = string
