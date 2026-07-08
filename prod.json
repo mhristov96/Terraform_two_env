@@ -1,0 +1,22 @@
+{
+
+"vnet_name": "prod-vnet",
+"vnet_address_space": "10.0.0.0/16",
+        "subnets": {
+            "subnet1": {
+                "name": "prod-subnet1",
+                "address_prefix": "10.0.1.0/24"
+            },
+            "subnet2": {
+                "name": "prod-subnet2",
+                "address_prefix": "10.0.2.0/24" 
+            }
+        },
+        "network_interface_name": "prod-nic",
+        "public_ip_name": "prod-public-ip",
+        "vm_name": "prod-vm",
+        "vm_size": "Standard_D2as_v6"
+
+    }
+    
+
