@@ -45,6 +45,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           terraform apply \
-          -auto-approve \
-          -var="env=${{ github.event.inputs.environment }}" \
+           -auto-approve \
+           -target=module.network \
+           -target=module.compute \
+          -var="env=${{ github.event.inputs.environment }}"
           -var="backend=${{ github.event.inputs.environment }}"
