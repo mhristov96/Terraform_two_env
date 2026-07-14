@@ -48,5 +48,5 @@ jobs:
            -auto-approve \
            -target=module.network \
            -target=module.compute \
-          -var="env=${{ github.event.inputs.environment }}"
+          -var="env=${{ github.event.inputs.environment }}" \
           -var="backend=${{ github.event.inputs.environment }}"
