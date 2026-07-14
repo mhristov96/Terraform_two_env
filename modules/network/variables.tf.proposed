@@ -17,29 +17,28 @@ variable "location" {
 variable "subnets" {
   description = "A map of subnets to create"
   type        = map(object({
-  subnet_name           = string
-  address_prefix = string
+    subnet_name    = string
+    address_prefix = string
   }))
 }
 variable "network_interfaces_name" {
-  description = "The name of the network interface"
-  type        = map(object({
-  network_interface_name = string
-  subnet_name = string
-  public_ip_name = string
-  nsg_name = string
+  description = "A map of network interface objects keyed by subnet key"
+  type = map(object({
+    network_interface_name = string
   }))
 }
 variable "public_ips" {
-  description = "The name of the public IP address"
-  type        = map(object({
-  public_ip_name = string
+  description = "A map of public IP objects keyed by subnet key"
+  type = map(object({
+    public_ip_name = string
   }))
 }
 
-variable "network_security_groups" {
+# NEW: NSGs map keyed by the same keys as subnets (e.g. subnet1, subnet2)
+variable "nsgs" {
+  description = "Map of NSGs and their security rules, keyed by subnet key"
   type = map(object({
-    nsg_name = string
+    name = string
     security_rules = list(object({
       name                       = string
       priority                   = number
@@ -52,4 +51,5 @@ variable "network_security_groups" {
       destination_address_prefix = string
     }))
   }))
+  default = {}
 }

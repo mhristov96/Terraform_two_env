@@ -1,0 +1,59 @@
+{
+  "resource_group_name": "dev-rg",
+  "vnet_name": "dev-vnet",
+  "vnet_address_space": "10.1.0.0/16",
+  "subnets": {
+    "subnet1": {
+      "subnet_name": "dev-subnet1",
+      "address_prefix": "10.1.1.0/24"
+    },
+    "subnet2": {
+      "subnet_name": "dev-subnet2",
+      "address_prefix": "10.1.2.0/24"
+    }
+  },
+  "network_interfaces_name": {
+    "subnet1": { "network_interface_name": "dev-nic1" },
+    "subnet2": { "network_interface_name": "dev-nic2" }
+  },
+  "public_ips": {
+    "subnet1": { "public_ip_name": "dev-public-ip1" },
+    "subnet2": { "public_ip_name": "dev-public-ip2" }
+  },
+  "nsgs": {
+    "subnet1": {
+      "name": "dev-nsg-1",
+      "security_rules": [
+        {
+          "name": "allow-ssh",
+          "priority": 100,
+          "direction": "Inbound",
+          "access": "Allow",
+          "protocol": "Tcp",
+          "source_port_range": "*",
+          "destination_port_range": "22",
+          "source_address_prefix": "0.0.0.0/0",
+          "destination_address_prefix": "*"
+        }
+      ]
+    },
+    "subnet2": {
+      "name": "dev-nsg-2",
+      "security_rules": [
+        {
+          "name": "deny-all-inbound",
+          "priority": 200,
+          "direction": "Inbound",
+          "access": "Deny",
+          "protocol": "*",
+          "source_port_range": "*",
+          "destination_port_range": "*",
+          "source_address_prefix": "*",
+          "destination_address_prefix": "*"
+        }
+      ]
+    }
+  },
+  "vm_name": "dev-vm",
+  "vm_size": "Standard_D2as_v6"
+}
