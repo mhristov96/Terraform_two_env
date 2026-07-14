@@ -90,6 +90,6 @@ jobs:
 
       - name: Terraform Apply
         run: |
-          terraform apply tfplan
+          terraform apply \
           -auto-approve \
           tfplan
