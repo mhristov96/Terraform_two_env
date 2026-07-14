@@ -39,7 +39,8 @@ jobs:
         run: |
           terraform plan \
           -var="env=${{ github.event.inputs.environment }}" \
-          -var="backend=${{ github.event.inputs.environment }}"
+          -var="backend=${{ github.event.inputs.environment }}" \
+          -out=tfplan
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
