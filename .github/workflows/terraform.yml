@@ -63,7 +63,7 @@ jobs:
 
     env:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.ARM_TENANT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
 
@@ -86,7 +86,9 @@ jobs:
         run: |
           terraform init \
           -backend-config="${{ github.event.inputs.environment }}.env"
+          
 
       - name: Terraform Apply
         run: |
-          terraform apply tfplan
+          terraform apply tfplan \
+          -auto-approve
