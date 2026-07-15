@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine" "webvm01" {
   admin_password      = var.admin_password
   disable_password_authentication = false
   custom_data        = base64encode(file("${path.module}/cloudinit"))
-  network_interface_ids = [var.network_interface_id]
+  network_interface_ids = module.network.nic_info[each.value.nic_name].id
 
   os_disk {
     caching              = "ReadWrite"

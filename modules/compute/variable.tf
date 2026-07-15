@@ -10,6 +10,7 @@ variable "vm_names" {
   description = "The name of the virtual machine"
   type        = map(object({
     vm_name = string
+    nic_name = string
   }))
 }
 variable "source_image_reference" {

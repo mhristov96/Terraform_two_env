@@ -80,13 +80,15 @@
       "network_interface_name": "web-nic",
       "subnet_name": "subnet1",
       "public_ip_name": "public_ip1",
-      "nsg_name": "web_nsg"
+      "nsg_name": "web_nsg",
+      "vm_name": "web-vm1"
     },
     "nic2": {
       "network_interface_name": "db-nic",
       "subnet_name": "subnet2",
       "public_ip_name": "public_ip2",
-      "nsg_name": "db_nsg"
+      "nsg_name": "db_nsg",
+      "vm_name": "db-vm1"
     }
   },
 
@@ -102,10 +104,12 @@
 
   "vm_names": {
     "web_vm1": {
-      "vm_name": "web-vm1"
+      "vm_name": "web-vm1",
+      "nic_name": "web-nic"
     },
     "db_vm1": {
-      "vm_name": "db-vm1"
+      "vm_name": "db-vm1",
+      "nic_name": "db-nic"
     }
   
   },
