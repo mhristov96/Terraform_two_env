@@ -20,7 +20,7 @@ module "network" {
 }
 module "compute" {
   source = "./modules/compute"
-  vm_name = local.conf.vm_name
+  vm_names = local.conf.vm_names
   vm_size = local.conf.vm_size
   source_image_reference = local.conf.source_image_reference
   admin_username = local.conf.admin_username
