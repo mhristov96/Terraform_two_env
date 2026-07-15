@@ -1,7 +1,6 @@
-output "nic_info1" {
-    value = azurerm_network_interface.nics["nic1"].id
-
-}
-output "nic_info2" {
-    value = azurerm_network_interface.nics["nic2"].id
+output "network_interface_ids" {
+  value = {
+    for k, nic in azurerm_network_interface.nic :
+    k => nic.id
+  }
 }
