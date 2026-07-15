@@ -6,7 +6,7 @@ variable "admin_username" {
   description = "The admin username for the virtual machine"
   type        = string
 }
-variable "vm_name" {
+variable "vm_names" {
   description = "The name of the virtual machine"
   type        = map(object({
     vm_name = string

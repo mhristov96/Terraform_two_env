@@ -100,12 +100,12 @@
     }
   },
 
-  "vm_name": {
+  "vm_names": {
     "web_vm1": {
-      "name": "web-vm1"
+      "vm_name": "web-vm1"
     },
     "db_vm1": {
-      "name": "db-vm1"
+      "vm_name": "db-vm1"
     }
   
   },

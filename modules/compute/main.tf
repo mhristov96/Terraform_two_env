@@ -1,6 +1,6 @@
 resource "azurerm_linux_virtual_machine" "webvm01" {
-  for_each = var.vm_name
-  name                = var.vm_name[each.key].vm_name
+  for_each = var.vm_names
+  name                = var.vm_names[each.key].vm_name
   resource_group_name = var.resource_group_name
   location            = var.resource_group_location
   size                = var.vm_size
