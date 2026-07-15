@@ -27,9 +27,9 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "network_interface_id" {
-  description = "The ID of the network interface"
-  type        = string
+variable "network_interface_ids" {
+  description = "A map of NIC IDs keyed by VM name"
+  type        = map(string)
 }
 variable "resource_group_location" {
   description = "The location of the virtual machine"
