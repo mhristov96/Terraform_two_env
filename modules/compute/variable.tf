@@ -8,7 +8,9 @@ variable "admin_username" {
 }
 variable "vm_name" {
   description = "The name of the virtual machine"
-  type        = string
+  type        = map(object({
+    vm_name = string
+  }))
 }
 variable "source_image_reference" {
   description = "Linux VM image configuration"

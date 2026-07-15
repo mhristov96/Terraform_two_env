@@ -39,6 +39,7 @@
           "access": "Allow",
           "protocol": "Tcp",
           "source_port_range": "*",
+          
           "destination_port_range": "80",
           "source_address_prefix": "*",
           "destination_address_prefix": "*"
@@ -99,7 +100,15 @@
     }
   },
 
-  "vm_name": "dev-vm",
+  "vm_name": {
+    "web_vm1": {
+      "name": "web-vm1"
+    },
+    "db_vm1": {
+      "name": "db-vm1"
+    }
+  
+  },
   "vm_size": "Standard_D2as_v6",
   "admin_username": "miro0o",
   "admin_password": "Miro$@$#FAdada1234!",
